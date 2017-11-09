@@ -1,111 +1,178 @@
+/* Uniform box sizing */
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border: 1px dotted;
+    /* border: 1px dotted; */
+}
+
+/* Defining responsive col sizes */
+[class*="col-"]{
+    width: 100%;
+}
+
+@media only screen and (min-width: 720px){
+    .l1 {width: 8.33%};
+    .l2 {width: 16.66%};
+    .l3 {width: 25%};
+    .l4 {width: 33.33%};
+    .l5 {width: 41.66%};
+    .l6 {width: 50%};
+    .l7 {width: 58.33%};
+    .l8 {width: 66.66%};
+    .l9 {width: 75%};
+    .l10 {width: 83.33%};
+    .l11 {width: 91.66%};
+    .l12 {width: 100%};
+}
+
+@media only screen and (min-width: 600px){
+    .m1 {width: 8.33%};
+    .m2 {width: 16.66%};
+    .m3 {width: 25%};
+    .m4 {width: 33.33%};
+    .m5 {width: 41.66%};
+    .m6 {width: 50%};
+    .m7 {width: 58.33%};
+    .m8 {width: 66.66%};
+    .m9 {width: 75%};
+    .m10 {width: 83.33%};
+    .m11 {width: 91.66%};
+    .m12 {width: 100%};
 }
 
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+h4 {
+    color: #333;
+}
+
+p {
+    color: #555;
+}
+
+.main {
+    margin:auto;
+    transition: margin-left .5s;
+    padding: 20px;
 }
 
 .header {
     background-color: #768fe8;
     color: #fff;
-    width: 100%;
-    height: 64px;
+    height: 48px;
     padding: 1px;
     position: fixed;
+    display: block;
+    float: left;
+    width: 100%;
+    z-index: 10;
 }
 
-.menu-item {
-   right: 50px;
+/* Navbar */
+.header ul {
+    padding: 8px 0;
+    margin: 0 auto;
+    text-decoration: none;
+    text-align: center;
 }
 
-.header li {
+#nav-logo {
     display: inline-block;
-    padding: 10px;
-    margin-left: 10px;
-}
-
-.header a {
-    color: #fff;
     text-decoration: none;
 }
-.main {
-    width: 75%;
-    margin:auto;
+
+#nav-menu {
+    margin-left: 5%;
+    display: inline;
+    float: left;
+    text-align: left !important;
 }
 
-.carousel img {
-   width: 100%;
-   height: 100%;
-   margin: 10px auto;
-   object-fit: cover;
+/* Side nav */
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    padding-top: 15px;
+    transition: 0.5s;
+}
+.side-nav a {
+    padding: 4px 4px 4px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #676C7F;
+    display: block;
+    transition: 0.3s;
 }
 
-footer {
-    background-color: #768fe8;
-    padding: 8px;
-    bottom: 0;
-    width: 100%;
-    position: relative;
-
-}
-
-.row {
-    display: -webkit-flex;
-    display: flex;
-}
-
-.column {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    padding: 10px;
-    flex: 1;
-}
-
-.column h4 {
-    text-align: center;
-}
-
-.column p {
-    padding: 3px;
-    text-align: justify;
-    font-style: italic;
-    font-weight: lighter;
-}
-
-.item h5, .item p {
-    margin: 10px;
-    padding: 5px;
-    text-align: center;
-}
-.img-text {
-    float: right;
-    width: 50%;
-    margin-top: 50px;
-}
-
-.item img {
-    width: 300px;
-    height:200px;
-    object-fit: cover;
-    margin-left: 150px;
-    -webkit-transition: width 2s;
-    -webkit-transition: height 2s;
-    transition: width 2s;
-    transition: height 2s;
-}
-
-.img-effect:hover {
-    width: 350px;
-    height: 250px;
-}
-
-h4, h5 {
+.side-nav a:hover, .offcanvas a:focus{
     color: #333;
+}
+
+.side-nav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 30px;
+    margin-left: 50px;
+}
+
+
+.header .menu-item {
+    display: none;
+    margin: 0 5px;
+ }
+
+.header a {
+    display: inline;
+ }
+
+@media only screen and (min-width: 600px){
+    .header a {
+        color: #fff;
+        text-decoration: none;
+        display: initial;
+    }
+    .header ul {
+        text-align: initial;
+    }
+    .header .menu-item {
+        display: inline-block;
+        padding: 5px 0;
+    }
+    #spacer {
+        display: inline-block;
+        width: 60vh;
+        }
+
+    #nav-menu {
+        display: none;
+    }
+}
+
+/* Button */
+.button {
+    text-align: center;
+    padding-left: 25vh;
+    padding-right: 25vh;
+}
+
+@media only screen and (min-width: 600px){
+    .button {
+        text-align: center;
+        padding-left: 33vh;
+        padding-right: 33vh;
+    }
 }
 
 @keyframes button {
@@ -113,11 +180,11 @@ h4, h5 {
     to {transform: rotate(-360deg);}
 }
 
-.carousel button {
-    background-color: #768fe8;
+#btn-animate {
+    background-color: #676C7F;
     border: none;
     color: #fff;
-    padding: 15px, 15px;
+    padding: 5px, 5px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
@@ -128,6 +195,119 @@ h4, h5 {
     animation-duration: 3s;
     animation-iteration-count: 3;
     transform: rotate(-360deg);
-    margin-left: 270px;
     
+}
+
+/* Carousel img */
+.carousel img {
+   width: 100%;
+   height: 100%;
+   margin: 10px auto;
+   object-fit: cover;
+   background-size: contain;
+}
+
+/* Flexbox columns */
+.row {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    
+}
+
+.column {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    padding: 10px;
+    flex: 1;
+}
+
+/* Catalog images */
+.item img {
+    display: block;
+    margin: auto;
+    width: 280px;
+    height:200px;
+    object-fit: cover;
+    -webkit-transition: width 2s;
+    -webkit-transition: height 2s;
+    transition: width 2s;
+    transition: height 2s;
+}
+
+.img-text {
+    width: 100%;
+    padding: 10px;
+}
+
+@media only screen and (min-width: 600px){
+    .row {
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        -ms-flex-direction: row;
+    }
+    
+    .column {
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        padding: 10px;
+        flex: 1;
+    }
+
+    .img-text {
+        float: right;
+        width: 50%;
+        padding: 10px;
+    }
+
+    .item img {
+        width: 280px;
+        height:200px;
+        object-fit: cover;
+        -webkit-transition: width 2s;
+        -webkit-transition: height 2s;
+        transition: width 2s;
+        transition: height 2s;
+    }
+    .column p {
+        text-align: justify;
+    }
+}
+
+/* Catalog text */
+.column h4 {
+    text-align: center;
+}
+
+.column p {
+    padding: 3px;
+    text-align: center;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.item h5, .item p {
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.img-effect:hover {
+    width: 290px;
+    height: 260px;
+}
+
+/* Footer */
+footer {
+    background-color: #687ECC;
+    padding: 8px;
+    bottom: 0;
+    position: relative;
+    color: #fff !important;
+}
+
+footer p {
+    color: #fff !important;
 }
