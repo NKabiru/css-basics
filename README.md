@@ -9,7 +9,7 @@
 - Flexbox
 - Responsive Layouts
 
-#####Notes:
+##### Notes:
  - Added flexbox layout
  - Made website responsive
  - Added hamburger menu for smaller screens
